@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* solid black background, images removed */
+  color: white;
+  font-size: 14px;
+  font-family: sans-serif;
+  overflow: auto;
+}
+a {
+  color: white;
+  font-size: 14px;
+}
+#main {
+  width: 100%;
+}
+#wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 1100px;
+  height: 680px;
+  margin-top: 10px;
+}
+#text {
+  width: 272px;
+  height: 560px;
+  left: 188px;
+  top: 80px;
+  position: absolute;
+  overflow-y: auto;
+  padding-right: 10px;
+  padding-left: 8px;
+  scroll-behavior: smooth;
+}
+
+/* Estilizar scrollbar */
+#text::-webkit-scrollbar {
+  width: 8px;
+}
+
+#text::-webkit-scrollbar-track {
+  background: rgba(196, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+#text::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgb(196, 255, 255), rgb(255, 100, 130));
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(196, 255, 255, 0.5);
+}
+
+#text::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgb(220, 255, 255), rgb(255, 130, 160));
+  box-shadow: 0 0 15px rgba(196, 255, 255, 0.8);
+}
+
+/* Para Firefox */
+#text {
+  scrollbar-color: linear-gradient(180deg, rgb(196, 255, 255), rgb(255, 100, 130)) rgba(196, 255, 255, 0.1);
+  scrollbar-width: thin;
+}
+#code {
+  display: none;
+  color: rgb(196, 255, 255);
+  font-size: 16px;
+  margin-top: 0;
+  line-height: 25px;
+  font-size: larger;
+  font-weight: bolder;
+}
+#clock-box {
+  position: absolute;
+  left: 60px;
+  top: 550px;
+  font-size: 28px;
+  display: none;
+}
+#clock-box a {
+  font-size: 28px;
+  text-decoration: none;
+}
+#clock {
+  margin-left: 48px;
+}
+#clock .digit {
+  font-size: 64px;
+}
+#canvas {
+  margin: 0 auto;
+  width: 1100px;
+  height: 680px;
+}
+#error {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 60px;
+  display: none;
+}
+.hand {
+  cursor: pointer;
+}
+.say {
+  margin-left: 5px;
+}
+.space {
+  margin-right: 150px;
+}
+
+#message-box{
+  position: absolute;
+  margin-top:450px;
+  font-size: 25px;
+  font-family: monospace;
+
+}
+
+/* Mensaje de orientación móvil */
+#mobile-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(20, 20, 40, 0.95));
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+#mobile-message.show {
+  display: flex;
+}
+
+.mobile-content {
+  text-align: center;
+  color: rgb(196, 255, 255);
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 20px rgba(196, 255, 255, 0.5);
+  animation: pulse-mobile 2s ease-in-out infinite;
+}
+
+@keyframes pulse-mobile {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1200px) {
+  #wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9.8;
+  }
+  
+  #canvas {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-height: 600px) and (orientation: portrait) {
+  #mobile-message {
+    display: flex;
+  }
+  
+  #wrap {
+    display: none;
+  }
+}
