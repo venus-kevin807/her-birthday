@@ -702,7 +702,7 @@
             ctx.scale(0.75, 0.75);
             ctx.font = "12px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
             ctx.fillText("Dame Click:) ", 30, -5);
-            ctx.fillText("Mi princesita hermosa", 28, 10);
+            ctx.fillText("Mi princesita", 28, 10);
             ctx.restore();
         },
         clear: function() {
